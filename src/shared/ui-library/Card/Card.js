@@ -1,7 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-const Assets= require('../../../views/assets');
 
 const CardBox = styled.div`
   flex-grow: 1;
