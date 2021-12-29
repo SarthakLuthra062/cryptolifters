@@ -6,7 +6,7 @@ class Assets{}
 
 Assets.getassetdata=function (username)
 {
-  if(username===null)return;
+  if(username==null)return;
   getconfig().then((config) => {
     
     getuser(username).then((res) => {
@@ -16,7 +16,7 @@ Assets.getassetdata=function (username)
            {
       for (let i = 0; i < res.data[0].inventory.length; i++) {
         for (let j = 0; j < config.levels.length; j++) {
-          if (res.data[0].inventory[i].key === config.levels[j].key) {
+          if (res.data[0].inventory[i].key == config.levels[j].key) {
             stakePower += res.data[0].inventory[i].value * config.levels[j].value;
           }
       }
@@ -67,7 +67,7 @@ async function getuser(user) {
     account : user,
     data :[]
   }
-  if(r.rows.length===0 || r.rows[0].account!==user) return empty;
+  if(r.rows.length==0 || r.rows[0].account!=user) return empty;
   return r.rows[0];
 }
 catch(e){
@@ -145,8 +145,8 @@ async function checkasset(assetID,user) {
     limit: 1,
     lower_bound: assetID,
   });
-  if(r.rows.length===0) return false;
-  if (r.rows[0].asset_id === assetID && r.rows[0].account===user) {
+  if(r.rows.length==0) return false;
+  if (r.rows[0].asset_id == assetID && r.rows[0].account==user) {
     return true;
   } else return false;
 
@@ -170,12 +170,12 @@ async function checktemplate(templateID) {
     table: "rarity",
     limit: 1000,
   });
-  if(r.rows.length===0) check= false;
+  if(r.rows.length==0) check= false;
   r.rows.forEach(function(v)
   {
     for(let i=0;i<v.template_ids.length;i++)
     {
-      if(templateID===v.template_ids[i])
+      if(templateID==v.template_ids[i])
       {
         check= true;
       }

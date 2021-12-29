@@ -62,6 +62,7 @@ const CardContainer = styled.div`
 `;
 
 const Packs = () => {
+  const { push } = useHistory();
 
   const [isLoading, setIsLoading] = useState(false);
   const [assets, setAssets] = useState([]);

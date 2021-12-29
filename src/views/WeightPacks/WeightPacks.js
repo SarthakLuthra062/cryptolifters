@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { isStyledComponent } from 'styled-components';
 import Footer from '../../shared/components/Footer/Footer';
 import Navbar from '../../shared/components/Navbar/Navbar';
 import Card from '../../shared/ui-library/Card/Card';
